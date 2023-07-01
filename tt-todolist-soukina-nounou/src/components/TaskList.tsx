@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 interface Task {
   id: number;
   title: string;
+  completed: boolean;
 }
 
 function TaskList() {
@@ -21,6 +22,7 @@ function TaskList() {
       {tasks.map(task => (
         <div key={task.id}>
           <h3>{task.title}</h3>
+          <p>{task.completed ? 'Terminée' : 'En cours'}</p>
         </div>
       ))}
     </div>
