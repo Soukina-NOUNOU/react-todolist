@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
+interface Task {
+  id: number;
+  title: string;
+}
 
 function TaskList() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   useEffect(() => {
     fetch('https://my-json-server.typicode.com/groupevaleco/tt-fake-todolist/tasks')
