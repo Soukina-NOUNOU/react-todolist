@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import TaskItem from './TaskItem';
 
 interface Task {
   id: number;
@@ -20,10 +21,7 @@ function TaskList() {
   return (
     <div>
       {tasks.map(task => (
-        <div key={task.id}>
-          <h3>{task.title}</h3>
-          <p>{task.completed ? 'Terminée' : 'En cours'}</p>
-        </div>
+        <TaskItem key={task.id} task={task} />
       ))}
     </div>
   );
